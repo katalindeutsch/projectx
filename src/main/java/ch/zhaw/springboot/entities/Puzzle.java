@@ -5,27 +5,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "puzzle")
 public class Puzzle extends Quest {
 
     //id will be generated automatically
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private int amount;
 
     //constructor should match super class's attributes
-    public Puzzle(long id, int amount) {
-        this.id = id;
-        this.amount = amount;
-    }
-
-    public Puzzle(long id, String name, Challenge challenge, long id1, int amount) {
-        super(id, name, challenge);
+    public Puzzle(long id, String name, long id1, int amount) {
+        super(id, name);
         this.id = id1;
         this.amount = amount;
     }
+
+    public Puzzle(){}
 
     //getters and setters
     @Override
