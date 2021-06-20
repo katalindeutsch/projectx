@@ -28,12 +28,14 @@ public class Performance {
     //all the quests has 1 performance
     //each quest has only and only 1 performance
     @ManyToOne
+    @JoinColumn(name = "quest_id")
     private Quest quest;
 
     //one to many relationship between Team and Performance entity
     //this means that each team has 1 performance
     //all the teams has 1 performance
     @ManyToOne
+    @JoinColumn(name = "team_id")
     private Team team;
 
     //constructor with parameters

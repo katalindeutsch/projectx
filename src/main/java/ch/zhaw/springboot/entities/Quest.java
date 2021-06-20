@@ -8,6 +8,8 @@ public abstract class Quest {
 
     //id will be generated automatically
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "quest_identifier_generator")
+    @SequenceGenerator(name = "quest_identifier_generator", sequenceName = "quest_identifier_generator", initialValue = 10000, allocationSize = 10)
     private long id;
 
     private String name;
